@@ -26,8 +26,10 @@ export default class App extends Component {
             {requests.map(request => {
               const track = getTrack(request)
               return (
-                <li>
-                  {track.name}, {request.score}
+                <li key={`${request.albumId}-${request.trackId}`}>
+                  <input type='radio' checked />
+                  <label>{track.name}</label>
+                  <input type='number' value={request.score} />
                 </li>
               )
             })}
@@ -37,12 +39,13 @@ export default class App extends Component {
           <h2>전체 노래</h2>
           <ul>
             {albums.map(album => (
-              <li>
+              <li key={album.id}>
                 <ul>
                   <h3>{album.name}</h3>
-                  {album.tracks.map(track => (
-                    <li>
-                      {track.name}
+                  {album.tracks.map((track, i) => (
+                    <li key={track.name}>
+                      <input type='radio' checked={getChecked(album.id, i + 1, requests)} />
+                      <label>{track.name}</label>
                     </li>
                   ))}
                 </ul>
@@ -53,6 +56,10 @@ export default class App extends Component {
       </div>
     )
   }
+}
+
+const getChecked = (albumId, trackId, requests) => {
+  return !!requests.find(request => request.albumId === albumId && request.trackId === trackId)
 }
 
 const getTrack = request => {
