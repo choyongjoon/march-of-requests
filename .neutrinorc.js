@@ -5,7 +5,7 @@ module.exports = {
       '@neutrinojs/react',
       {
         html: {
-          title: 'march'
+          title: '신청의 3월 도우미'
         }
       }
     ],
