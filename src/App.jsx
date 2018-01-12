@@ -12,7 +12,7 @@ export default class App extends Component {
       { albumId: 12, trackId: 1, score: 40 },
       { albumId: 12, trackId: 6, score: 10 }
     ]
-  };
+  }
 
   render () {
     const { requests } = this.state
@@ -20,17 +20,26 @@ export default class App extends Component {
     return (
       <div className='App'>
         <h1 className='title'>신청의 3월 도우미</h1>
-        <p className='description'>줄리아 하트의 팬이 만든 비공식 페이지입니다.</p>
+        <p className='description'>
+          줄리아 하트의 팬이 만든 비공식 페이지입니다.
+        </p>
         <div className='request-container'>
           <h2>내 신청</h2>
           <ul className='request-list'>
             {requests.map(request => {
               const track = getTrack(request)
               return (
-                <li className='request' key={`${request.albumId}-${request.trackId}`}>
+                <li
+                  className='request'
+                  key={`${request.albumId}-${request.trackId}`}
+                >
                   <input className='request-checkbox' type='checkbox' checked />
                   <label className='track-title'>{track.title}</label>
-                  <input className='request-score-input' type='number' value={request.score} />
+                  <input
+                    className='request-score-input'
+                    type='number'
+                    value={request.score}
+                  />
                 </li>
               )
             })}
@@ -46,7 +55,11 @@ export default class App extends Component {
                 <ul className='track-list'>
                   {album.tracks.map((track, i) => (
                     <li className='track' key={track.title}>
-                      <input className='track-checkbox' type='checkbox' checked={getChecked(album.id, i + 1, requests)} />
+                      <input
+                        className='track-checkbox'
+                        type='checkbox'
+                        checked={getChecked(album.id, i + 1, requests)}
+                      />
                       <label className='track-title'>{track.title}</label>
                     </li>
                   ))}
@@ -61,7 +74,9 @@ export default class App extends Component {
 }
 
 const getChecked = (albumId, trackId, requests) => {
-  return !!requests.find(request => request.albumId === albumId && request.trackId === trackId)
+  return !!requests.find(
+    request => request.albumId === albumId && request.trackId === trackId
+  )
 }
 
 const getTrack = request => {
