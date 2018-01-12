@@ -28,7 +28,7 @@ export default class App extends Component {
               const track = getTrack(request)
               return (
                 <li className='request' key={`${request.albumId}-${request.trackId}`}>
-                  <input className='request-radio' type='radio' checked />
+                  <input className='request-checkbox' type='checkbox' checked />
                   <label className='track-title'>{track.title}</label>
                   <input className='request-score-input' type='number' value={request.score} />
                 </li>
@@ -46,7 +46,7 @@ export default class App extends Component {
                 <ul className='track-list'>
                   {album.tracks.map((track, i) => (
                     <li className='track' key={track.title}>
-                      <input className='track-radio' type='radio' checked={getChecked(album.id, i + 1, requests)} />
+                      <input className='track-checkbox' type='checkbox' checked={getChecked(album.id, i + 1, requests)} />
                       <label className='track-title'>{track.title}</label>
                     </li>
                   ))}
