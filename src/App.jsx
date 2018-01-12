@@ -19,33 +19,35 @@ export default class App extends Component {
 
     return (
       <div className='App'>
-        <h1>신청의 3월 도우미</h1>
-        <div>
+        <h1 className='title'>신청의 3월 도우미</h1>
+        <p className='description'>줄리아 하트의 팬이 만든 비공식 페이지입니다.</p>
+        <div className='request-container'>
           <h2>내 신청</h2>
-          <ul>
+          <ul className='request-list'>
             {requests.map(request => {
               const track = getTrack(request)
               return (
-                <li key={`${request.albumId}-${request.trackId}`}>
-                  <input type='radio' checked />
-                  <label>{track.name}</label>
-                  <input type='number' value={request.score} />
+                <li className='request' key={`${request.albumId}-${request.trackId}`}>
+                  <input className='request-radio' type='radio' checked />
+                  <label className='track-title'>{track.title}</label>
+                  <input className='request-score-input' type='number' value={request.score} />
                 </li>
               )
             })}
           </ul>
         </div>
-        <div>
+        <div className='track-container'>
           <h2>전체 노래</h2>
-          <ul>
+          <ul className='album-list'>
             {albums.map(album => (
-              <li key={album.id}>
-                <ul>
-                  <h3>{album.name}</h3>
+              <li className='album' key={album.id}>
+                <h3 className='album-title'>{album.title}</h3>
+                <p className='album-date'>{album.date.toLocaleDateString()}</p>
+                <ul className='track-list'>
                   {album.tracks.map((track, i) => (
-                    <li key={track.name}>
-                      <input type='radio' checked={getChecked(album.id, i + 1, requests)} />
-                      <label>{track.name}</label>
+                    <li className='track' key={track.title}>
+                      <input className='track-radio' type='radio' checked={getChecked(album.id, i + 1, requests)} />
+                      <label className='track-title'>{track.title}</label>
                     </li>
                   ))}
                 </ul>
@@ -69,7 +71,7 @@ const getTrack = request => {
     return track
   } catch (err) {
     return {
-      name: '...',
+      title: '...',
       score: '0'
     }
   }
