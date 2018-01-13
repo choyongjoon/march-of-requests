@@ -5,29 +5,62 @@ import albums from './albums'
 import './App.css'
 
 const maxRequests = 10
+const maxScore = 100
 
 export default class App extends Component {
   state = {
     requests: [
-      { albumId: 13, trackId: 1, score: 20 },
+      { albumId: 13, trackId: 1, score: 40 },
       { albumId: 13, trackId: 3, score: 30 },
-      { albumId: 12, trackId: 1, score: 40 },
+      { albumId: 12, trackId: 1, score: 20 },
       { albumId: 12, trackId: 6, score: 10 }
-    ]
+    ],
+    sumScore: 100
   }
 
   onToggleRequest = i => () => {
-    const { requests } = this.state
+    const { requests, sumScore } = this.state
     const newRequests = [...requests]
+    const newSumScore = sumScore - newRequests[i].score
     newRequests.splice(i, 1)
-    this.setState({ requests: newRequests })
+    this.setState({ requests: newRequests, sumScore: newSumScore })
   }
 
   onChangeScore = i => e => {
-    const { requests } = this.state
+    const { requests, sumScore } = this.state
     const newRequests = [...requests]
-    newRequests[i].score = e.target.value
-    this.setState({ requests: newRequests })
+    let newScore = parseInt(e.target.value)
+    let prevScore = parseInt(newRequests[i].score)
+    if (isNaN(prevScore)) prevScore = 0
+    let newSumScore = sumScore - prevScore
+    if (isNaN(newScore)) {
+      newRequests[i].score = e.target.value
+    } else {
+      newSumScore = sumScore - prevScore + newScore
+      newRequests[i].score = newScore
+    }
+    this.setState({ requests: newRequests, sumScore: newSumScore })
+  }
+
+  onBlurScore = i => e => {
+    const { requests, sumScore } = this.state
+    let newRequests = [...requests]
+    let newScore = parseInt(e.target.value)
+    let newSumScore = sumScore
+    if (isNaN(newScore)) {
+      newRequests[i].score = 0
+    } else {
+      if (newScore < 0) {
+        newSumScore = newSumScore - newScore
+        newScore = 0
+      } else if (newSumScore > maxScore) {
+        newScore = newScore - (newSumScore - maxScore)
+        newSumScore = maxScore
+      }
+      newRequests[i].score = newScore
+    }
+    newRequests = newRequests.sort((a, b) => b.score - a.score)
+    this.setState({ requests: newRequests, sumScore: newSumScore })
   }
 
   onToggleTrack = (albumId, trackId) => e => {
@@ -48,7 +81,7 @@ export default class App extends Component {
   }
 
   render () {
-    const { requests } = this.state
+    const { requests, sumScore } = this.state
     const isRequestsFull = requests.length === maxRequests
 
     return (
@@ -59,6 +92,7 @@ export default class App extends Component {
         </p>
         <div className='request-container'>
           <h2>내 신청</h2>
+          <p>남은 점수: {maxScore - sumScore}</p>
           <ul className='request-list'>
             {requests.map((request, i) => {
               const track = getTrack(request)
@@ -76,9 +110,10 @@ export default class App extends Component {
                   <label className='track-title'>{track.title}</label>
                   <input
                     className='request-score-input'
-                    type='number'
+                    type='text'
                     value={request.score}
                     onChange={this.onChangeScore(i)}
+                    onBlur={this.onBlurScore(i)}
                   />
                 </li>
               )
