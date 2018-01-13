@@ -83,13 +83,16 @@ export default class App extends Component {
   render () {
     const { requests, sumScore } = this.state
     const isRequestsFull = requests.length === maxRequests
+    const dummyRequests = Array.apply(null, Array(maxRequests - requests.length))
 
     return (
       <div className='App'>
-        <h1 className='title'>신청의 3월 도우미</h1>
-        <p className='description'>
-          줄리아 하트의 팬이 만든 비공식 페이지입니다.
-        </p>
+        <div className='header'>
+          <h1 className='title'>신청의 3월 도우미</h1>
+          <p className='description'>
+            줄리아 하트의 팬이 만든 비공식 페이지입니다.
+          </p>
+        </div>
         <div className='request-container'>
           <h2>내 신청</h2>
           <p>남은 점수: {maxScore - sumScore}</p>
@@ -118,6 +121,12 @@ export default class App extends Component {
                 </li>
               )
             })}
+            {dummyRequests.map((dummyRequest, i) => (
+              <li
+                className='request'
+                key={`dummy-${i}`}
+              />
+            ))}
           </ul>
         </div>
         <div className='track-container'>

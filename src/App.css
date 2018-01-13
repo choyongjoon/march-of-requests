@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -8,5 +12,35 @@ li {
 }
 
 .App {
-  padding: 20px;
+}
+
+.header {
+  padding: 0 20px 0 20px;
+}
+
+.request-container, .track-container {
+  display: inline-block;
+  padding: 0 20px 0 20px;
+  min-width: 320px;
+  max-width: 414px;
+  width: 320px;
+  vertical-align: top;
+}
+
+.request, .track {
+  display: flex;
+  height: 21.5px;
+}
+
+.track-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  flex: 1;
+}
+
+.request-score-input {
+  width: 20px;
+  text-align: right;
 }
