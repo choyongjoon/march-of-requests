@@ -4,6 +4,8 @@ import albums from './albums'
 
 import './App.css'
 
+const maxRequests = 10
+
 export default class App extends Component {
   state = {
     requests: [
@@ -14,8 +16,40 @@ export default class App extends Component {
     ]
   }
 
+  onToggleRequest = i => () => {
+    const { requests } = this.state
+    const newRequests = [...requests]
+    newRequests.splice(i, 1)
+    this.setState({ requests: newRequests })
+  }
+
+  onChangeScore = i => e => {
+    const { requests } = this.state
+    const newRequests = [...requests]
+    newRequests[i].score = e.target.value
+    this.setState({ requests: newRequests })
+  }
+
+  onToggleTrack = (albumId, trackId) => e => {
+    const { requests } = this.state
+    if (e.target.checked) {
+      const request = {
+        albumId,
+        trackId,
+        score: 0
+      }
+      this.setState({ requests: [...requests, request] })
+    } else {
+      const index = requests.findIndex(
+        request => request.albumId === albumId && request.trackId === trackId
+      )
+      this.onToggleRequest(index)()
+    }
+  }
+
   render () {
     const { requests } = this.state
+    const isRequestsFull = requests.length === maxRequests
 
     return (
       <div className='App'>
@@ -26,19 +60,25 @@ export default class App extends Component {
         <div className='request-container'>
           <h2>내 신청</h2>
           <ul className='request-list'>
-            {requests.map(request => {
+            {requests.map((request, i) => {
               const track = getTrack(request)
               return (
                 <li
                   className='request'
                   key={`${request.albumId}-${request.trackId}`}
                 >
-                  <input className='request-checkbox' type='checkbox' checked />
+                  <input
+                    className='request-checkbox'
+                    type='checkbox'
+                    checked
+                    onChange={this.onToggleRequest(i)}
+                  />
                   <label className='track-title'>{track.title}</label>
                   <input
                     className='request-score-input'
                     type='number'
                     value={request.score}
+                    onChange={this.onChangeScore(i)}
                   />
                 </li>
               )
@@ -53,16 +93,21 @@ export default class App extends Component {
                 <h3 className='album-title'>{album.title}</h3>
                 <p className='album-date'>{album.date.toLocaleDateString()}</p>
                 <ul className='track-list'>
-                  {album.tracks.map((track, i) => (
-                    <li className='track' key={track.title}>
-                      <input
-                        className='track-checkbox'
-                        type='checkbox'
-                        checked={getChecked(album.id, i + 1, requests)}
-                      />
-                      <label className='track-title'>{track.title}</label>
-                    </li>
-                  ))}
+                  {album.tracks.map((track, i) => {
+                    const checked = getChecked(album.id, i + 1, requests)
+                    return (
+                      <li className='track' key={track.title}>
+                        <input
+                          className='track-checkbox'
+                          type='checkbox'
+                          checked={checked}
+                          onChange={this.onToggleTrack(album.id, i + 1)}
+                          disabled={!checked && isRequestsFull}
+                        />
+                        <label className='track-title'>{track.title}</label>
+                      </li>
+                    )
+                  })}
                 </ul>
               </li>
             ))}
