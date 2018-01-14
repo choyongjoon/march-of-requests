@@ -5,7 +5,11 @@ module.exports = {
       '@neutrinojs/react',
       {
         html: {
-          title: '신청의 3월 도우미'
+          title: '신청의 3월 도우미',
+          links: [
+            'https://fonts.googleapis.com/css?family=Playfair+Display',
+            'http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css'
+          ],
         }
       }
     ],

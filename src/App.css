@@ -1,5 +1,20 @@
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Nanum Myeongjo for number';
+  src: local('NanumMyeongjo'), url(http://fonts.gstatic.com/s/nanummyeongjo/v5/759Ye4mX1L25nmQbM_bHUKYTEc5bGFKVEAN-DJRgJ_w.woff2) format('woff2');
+
+  unicode-range: U+30-39;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: 'Nanum Myeongjo for number', 'Playfair Display', 'Nanum Myeongjo', serif;
+  line-height: 1.8;
 }
 
 ul {
@@ -13,22 +28,31 @@ li {
 
 .App {
   margin: auto;
+  padding: 10px;
   width: 100%;
 }
 
 .header {
-  padding: 0 20px 0 20px;
+  padding: 0 10px 0 10px;
+  text-align: center;
 }
 
 .request-container, .track-container {
   margin-bottom: 20px;
-  padding: 0 20px 0 20px;
+  padding: 0 10px 0 10px;
   vertical-align: top;
+}
+
+.request-container {
+}
+
+.album {
+  margin-bottom: 30px;
 }
 
 .request, .track {
   display: flex;
-  height: 21.5px;
+  height: 30px;
 }
 
 .track-title {
@@ -40,14 +64,14 @@ li {
 }
 
 .request-score-input {
-  width: 20px;
+  width: 30px;
   text-align: right;
 }
 
 .album-cover {
   float: right;
-  width: 102px;
-  height: 102px;
+  width: 100px;
+  height: 100px;
   border: 1px solid #eee;
 }
 
@@ -65,7 +89,8 @@ li {
 
   .request-container, .track-container {
     display: inline-block;
-    width: 344px;
+    margin: 0 10px 0 10px;
+    width: 354px;
   }
 
   .request-container {
