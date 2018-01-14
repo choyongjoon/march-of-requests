@@ -8,7 +8,7 @@
     "start": "neutrino start",
     "lint": "neutrino lint",
     "test": "neutrino test",
-    "deploy": "npm run build && git subtree push --prefix build origin gh-pages"
+    "deploy": "git subtree push --prefix build origin gh-pages"
   },
   "dependencies": {
     "prop-types": "^15.6.0",
