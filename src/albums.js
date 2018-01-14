@@ -277,12 +277,12 @@ const albums = [
         title: '한겨울의 천둥처럼'
       },
       {
-        title: '기도'
+        title: '기도 (Elena) (Bonus Track)'
       }
     ]
   },
   {
-    id: 3,
+    id: 4,
     title: '빛방울보들',
     date: new Date('2005-06-30'),
     coverUrl: 'http://musicmeta.phinf.naver.net/album/000/033/33235.jpg?type=r204Fll&v=20111124154547',
@@ -308,7 +308,7 @@ const albums = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     title: '영원의 단면',
     date: new Date('2005-04-04'),
     coverUrl: 'http://musicmeta.phinf.naver.net/album/000/032/32022.jpg?type=r204Fll&v=20130515170019',
@@ -351,6 +351,26 @@ const albums = [
       },
       {
         title: '(Hidden Track)'
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: 'Miss Chocolate',
+    date: new Date('2004-09-16'),
+    coverUrl: 'http://musicmeta.phinf.naver.net/album/000/028/28397.jpg?type=r204Fll&v=20170706153004',
+    tracks: [
+      {
+        title: 'Miss Chocolate'
+      },
+      {
+        title: '가벼운 숨결'
+      },
+      {
+        title: '활짝 핀 벚꽃나무 아래서'
+      },
+      {
+        title: 'Miss Chocolate (Alt. Lyric)'
       }
     ]
   },
