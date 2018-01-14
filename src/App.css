@@ -2,7 +2,7 @@
   font-weight: 400;
   font-style: normal;
   font-family: 'Nanum Myeongjo for number';
-  src: local('NanumMyeongjo'), url(http://fonts.gstatic.com/s/nanummyeongjo/v5/759Ye4mX1L25nmQbM_bHUKYTEc5bGFKVEAN-DJRgJ_w.woff2) format('woff2');
+  src: local('NanumMyeongjo'), url(https://fonts.gstatic.com/s/nanummyeongjo/v5/759Ye4mX1L25nmQbM_bHUKYTEc5bGFKVEAN-DJRgJ_w.woff2) format('woff2');
 
   unicode-range: U+30-39;
 }
@@ -23,6 +23,17 @@ ul {
 
 li {
   list-style: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    margin: 0;
+
+    -webkit-appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }
 
 .App {
@@ -50,6 +61,8 @@ li {
   display: flex;
   height: 30px;
   line-height: 1.8;
+
+  align-items: center;
 }
 
 .track-title {
@@ -62,12 +75,11 @@ li {
 
 .request-score-input {
   margin-bottom: 6px;
-  padding-top: 4px;
-  padding-right: 4px;
-  padding-bottom: 0;
-  width: 26px;
+  padding: 4px 4px 0 4px;
+  width: 35px;
   border: 0;
   border-bottom: 1px solid #ccc;
+  border-radius: 0;
   text-align: right;
   font-weight: normal;
   font-size: 1em;

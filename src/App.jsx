@@ -78,7 +78,6 @@ export default class App extends Component {
   render () {
     const { requests, sumScore } = this.state
     const isRequestsFull = requests.length === maxRequests
-    const dummyRequests = Array.apply(null, Array(maxRequests - requests.length))
 
     return (
       <div className='App'>
@@ -110,7 +109,7 @@ export default class App extends Component {
                   <label className='track-title'>{track.title}</label>
                   <input
                     className='request-score-input'
-                    type='text'
+                    type='number'
                     value={request.score}
                     onChange={this.onChangeScore(i)}
                     onBlur={this.onBlurScore(i)}
@@ -118,12 +117,6 @@ export default class App extends Component {
                 </li>
               )
             })}
-            {dummyRequests.map((dummyRequest, i) => (
-              <li
-                className='request'
-                key={`dummy-${i}`}
-              />
-            ))}
           </ul>
         </div>
         <div className='track-container'>
