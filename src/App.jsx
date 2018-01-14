@@ -134,6 +134,7 @@ export default class App extends Component {
           <ul className='album-list'>
             {albums.map(album => (
               <li className='album' key={album.id}>
+                <img className='album-cover' src={album.coverUrl} />
                 <h3 className='album-title'>{album.title}</h3>
                 <p className='album-date'>{album.date.toLocaleDateString()}</p>
                 <ul className='track-list'>
