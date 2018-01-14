@@ -12,6 +12,8 @@ li {
 }
 
 .App {
+  margin: auto;
+  width: 100%;
 }
 
 .header {
@@ -19,11 +21,8 @@ li {
 }
 
 .request-container, .track-container {
-  display: inline-block;
+  margin-bottom: 20px;
   padding: 0 20px 0 20px;
-  min-width: 320px;
-  max-width: 414px;
-  width: 320px;
   vertical-align: top;
 }
 
@@ -43,4 +42,34 @@ li {
 .request-score-input {
   width: 20px;
   text-align: right;
+}
+
+.album-cover {
+  float: right;
+  width: 102px;
+  height: 102px;
+  border: 1px solid #eee;
+}
+
+@media (min-width: 576px) {
+  .App {
+    width: 576px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .App {
+    width: 768px;
+  }
+
+  .request-container, .track-container {
+    display: inline-block;
+    width: 344px;
+  }
+
+  .request-container {
+    position: sticky;
+    top: 20px;
+  }
 }
