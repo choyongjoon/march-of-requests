@@ -14,7 +14,6 @@
 body {
   margin: 0;
   font-family: 'Nanum Myeongjo for number', 'Playfair Display', 'Nanum Myeongjo', serif;
-  line-height: 1.8;
 }
 
 ul {
@@ -43,16 +42,14 @@ li {
   vertical-align: top;
 }
 
-.request-container {
-}
-
-.album {
-  margin-bottom: 30px;
+.reamining-score {
+  margin-bottom: 20px;
 }
 
 .request, .track {
   display: flex;
   height: 30px;
+  line-height: 1.8;
 }
 
 .track-title {
@@ -64,14 +61,16 @@ li {
 }
 
 .request-score-input {
-  margin-bottom: 4px;
-  padding-right: 3px;
-  width: 24px;
+  margin-bottom: 6px;
+  padding-top: 4px;
+  padding-right: 4px;
+  padding-bottom: 0;
+  width: 26px;
   border: 0;
   border-bottom: 1px solid #ccc;
   text-align: right;
   font-weight: normal;
-  font-size: 15px;
+  font-size: 1em;
   font-family: inherit;
 }
 
@@ -79,11 +78,34 @@ li {
   border-bottom: 1px solid #000;
 }
 
+.album {
+  margin-bottom: 30px;
+}
+
+.album-header {
+  margin-bottom: 20px;
+}
+
 .album-cover {
   float: right;
+  margin-top: 3px;
   width: 100px;
   height: 100px;
   border: 1px solid #eee;
+}
+
+.album-title {
+  margin-bottom: 10px;
+}
+
+.album-date {
+  padding-left: 1px;
+  font-size: 0.9em;
+}
+
+.request-checkbox, .track-checkbox {
+  margin-right: 7px;
+  margin-left: 1px;
 }
 
 @media (min-width: 576px) {

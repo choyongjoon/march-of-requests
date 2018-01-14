@@ -95,7 +95,9 @@ export default class App extends Component {
         </div>
         <div className='request-container'>
           <h2>내 신청</h2>
-          <p>남은 점수: {maxScore - sumScore}</p>
+          <div className='reamining-score'>
+            남은 점수: {maxScore - sumScore}
+          </div>
           <ul className='request-list'>
             {requests.map((request, i) => {
               const track = getTrack(request)
@@ -134,9 +136,11 @@ export default class App extends Component {
           <ul className='album-list'>
             {albums.map(album => (
               <li className='album' key={album.id}>
-                <img className='album-cover' src={album.coverUrl} />
-                <h3 className='album-title'>{album.title}</h3>
-                <p className='album-date'>{album.date.toLocaleDateString()}</p>
+                <div className='album-header'>
+                  <img className='album-cover' src={album.coverUrl} />
+                  <h3 className='album-title'>{album.title}</h3>
+                  <div className='album-date'>{album.date.toLocaleDateString()}</div>
+                </div>
                 <ul className='track-list'>
                   {album.tracks.map((track, i) => {
                     const checked = getChecked(album.id, i + 1, requests)
