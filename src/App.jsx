@@ -9,13 +9,8 @@ const maxScore = 100
 
 export default class App extends Component {
   state = {
-    requests: [
-      { albumId: 13, trackId: 1, score: 40 },
-      { albumId: 13, trackId: 3, score: 30 },
-      { albumId: 12, trackId: 1, score: 20 },
-      { albumId: 12, trackId: 6, score: 10 }
-    ],
-    sumScore: 100
+    requests: [],
+    sumScore: 0
   }
 
   onToggleRequest = i => () => {
