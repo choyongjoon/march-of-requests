@@ -8,7 +8,7 @@
     "start": "neutrino start",
     "lint": "neutrino lint",
     "test": "neutrino test",
-    "deploy": "git subtree push --prefix build origin gh-pages"
+    "deploy": "git push origin `git subtree split --prefix build master`:gh-pages --force"
   },
   "dependencies": {
     "normalize.css": "^7.0.0",
