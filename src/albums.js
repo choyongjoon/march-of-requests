@@ -3,7 +3,7 @@ const albums = [
     id: 13,
     title: '서교',
     date: new Date('2017-10-24'),
-    coverUrl: 'http://musicmeta.phinf.naver.net/album/002/250/2250313.jpg?type=r204Fll&v=20171026172903',
+    coverUrl: '/static/2250313.jpg',
     tracks: [
       {
         title: '미래(未來)'
@@ -41,7 +41,7 @@ const albums = [
     id: 12,
     title: '인디 달링을 찾아서',
     date: new Date('2014-04-03'),
-    coverUrl: 'http://musicmeta.phinf.naver.net/album/000/422/422573.jpg?type=r204Fll&v=20150722101906',
+    coverUrl: '/static/422573.jpg',
     tracks: [
       {
         title: '인디 달링'
@@ -82,7 +82,7 @@ const albums = [
     id: 11,
     title: '정월의 루미나리에',
     date: new Date('2013-12-26'),
-    coverUrl: 'http://musicmeta.phinf.naver.net/album/000/409/409746.jpg?type=r204Fll&v=20150722101605',
+    coverUrl: '/static/409746.jpg',
     tracks: [
       {
         title: '정월의 루미나리에'
@@ -93,7 +93,7 @@ const albums = [
     id: 10,
     title: '영원의 단면',
     date: new Date('2013-05-14'),
-    coverUrl: 'http://musicmeta.phinf.naver.net/album/000/378/378740.jpg?type=r204Fll&v=20151007114306',
+    coverUrl: '/static/378740.jpg',
     tracks: [
       {
         title: '안아줘'
@@ -140,7 +140,7 @@ const albums = [
     id: 9,
     title: '체리 블라썸',
     date: new Date('2013-04-04'),
-    coverUrl: 'http://musicmeta.phinf.naver.net/album/000/374/374213.jpg?type=r204Fll&v=20151007114306',
+    coverUrl: '/static/374213.jpg',
     tracks: [
       {
         title: '체리 블라썸'
@@ -151,7 +151,7 @@ const albums = [
     id: 8,
     title: 'B (EP)',
     date: new Date('2010-03-25'),
-    coverUrl: 'http://musicmeta.phinf.naver.net/album/000/170/170833.jpg?type=r204Fll&v=20151006163103',
+    coverUrl: '/static/170833.jpg',
     tracks: [
       {
         title: '하얀 마법 속삭임'
@@ -180,7 +180,7 @@ const albums = [
     id: 7,
     title: '돌아와 / 한국소녀의 겨울 (Single)',
     date: new Date('2009-09-17'),
-    coverUrl: 'http://musicmeta.phinf.naver.net/album/000/162/162328.jpg?type=r204Fll&v=20150813180914',
+    coverUrl: '/static/162328.jpg',
     tracks: [
       {
         title: '돌아와'
@@ -194,7 +194,7 @@ const albums = [
     id: 6,
     title: 'Hot Music',
     date: new Date('2007-10-01'),
-    coverUrl: 'http://musicmeta.phinf.naver.net/album/000/061/61845.jpg?type=r204Fll&v=20141203120910',
+    coverUrl: '/static/61845.jpg',
     tracks: [
       {
         title: '소나기의 첫 번째 물방울'
@@ -238,7 +238,7 @@ const albums = [
     id: 5,
     title: '당신은 울기 위해 태어난 사람',
     date: new Date('2006-07-07'),
-    coverUrl: 'http://musicmeta.phinf.naver.net/album/000/040/40475.jpg?type=r204Fll&v=20141203120006',
+    coverUrl: '/static/40475.jpg',
     tracks: [
       {
         title: '봄의 첫 날'
@@ -285,7 +285,7 @@ const albums = [
     id: 4,
     title: '빛방울보들',
     date: new Date('2005-06-30'),
-    coverUrl: 'http://musicmeta.phinf.naver.net/album/000/033/33235.jpg?type=r204Fll&v=20111124154547',
+    coverUrl: '/static/33235.jpg',
     tracks: [
       {
         title: '빛방울보 (edit ver.)'
@@ -311,7 +311,7 @@ const albums = [
     id: 3,
     title: '영원의 단면',
     date: new Date('2005-04-04'),
-    coverUrl: 'http://musicmeta.phinf.naver.net/album/000/032/32022.jpg?type=r204Fll&v=20130515170019',
+    coverUrl: '/static/32022.jpg',
     tracks: [
       {
         title: '안아줘'
@@ -358,7 +358,7 @@ const albums = [
     id: 2,
     title: 'Miss Chocolate',
     date: new Date('2004-09-16'),
-    coverUrl: 'http://musicmeta.phinf.naver.net/album/000/028/28397.jpg?type=r204Fll&v=20170706153004',
+    coverUrl: '/static/28397.jpg',
     tracks: [
       {
         title: 'Miss Chocolate'
@@ -378,7 +378,7 @@ const albums = [
     id: 1,
     title: '가벼운 숨결',
     date: new Date('2001-01-07'),
-    coverUrl: 'http://musicmeta.phinf.naver.net/album/000/015/15417.jpg?type=r204Fll&v=20170706153004',
+    coverUrl: '/static/15417.jpg',
     tracks: [
       {
         title: '오르골'
