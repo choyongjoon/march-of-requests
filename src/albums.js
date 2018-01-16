@@ -3,7 +3,7 @@ const albums = [
     id: 13,
     title: '서교',
     date: new Date('2017-10-24'),
-    coverUrl: '/static/2250313.jpg',
+    coverUrl: 'https://choyongjoon.github.io/march-of-requests/static/2250313.jpg',
     tracks: [
       {
         title: '미래(未來)'
@@ -41,7 +41,7 @@ const albums = [
     id: 12,
     title: '인디 달링을 찾아서',
     date: new Date('2014-04-03'),
-    coverUrl: '/static/422573.jpg',
+    coverUrl: 'https://choyongjoon.github.io/march-of-requests/static/422573.jpg',
     tracks: [
       {
         title: '인디 달링'
@@ -82,7 +82,7 @@ const albums = [
     id: 11,
     title: '정월의 루미나리에',
     date: new Date('2013-12-26'),
-    coverUrl: '/static/409746.jpg',
+    coverUrl: 'https://choyongjoon.github.io/march-of-requests/static/409746.jpg',
     tracks: [
       {
         title: '정월의 루미나리에'
@@ -93,7 +93,7 @@ const albums = [
     id: 10,
     title: '영원의 단면',
     date: new Date('2013-05-14'),
-    coverUrl: '/static/378740.jpg',
+    coverUrl: 'https://choyongjoon.github.io/march-of-requests/static/378740.jpg',
     tracks: [
       {
         title: '안아줘'
@@ -140,7 +140,7 @@ const albums = [
     id: 9,
     title: '체리 블라썸',
     date: new Date('2013-04-04'),
-    coverUrl: '/static/374213.jpg',
+    coverUrl: 'https://choyongjoon.github.io/march-of-requests/static/374213.jpg',
     tracks: [
       {
         title: '체리 블라썸'
@@ -151,7 +151,7 @@ const albums = [
     id: 8,
     title: 'B (EP)',
     date: new Date('2010-03-25'),
-    coverUrl: '/static/170833.jpg',
+    coverUrl: 'https://choyongjoon.github.io/march-of-requests/static/170833.jpg',
     tracks: [
       {
         title: '하얀 마법 속삭임'
@@ -180,7 +180,7 @@ const albums = [
     id: 7,
     title: '돌아와 / 한국소녀의 겨울 (Single)',
     date: new Date('2009-09-17'),
-    coverUrl: '/static/162328.jpg',
+    coverUrl: 'https://choyongjoon.github.io/march-of-requests/static/162328.jpg',
     tracks: [
       {
         title: '돌아와'
@@ -194,7 +194,7 @@ const albums = [
     id: 6,
     title: 'Hot Music',
     date: new Date('2007-10-01'),
-    coverUrl: '/static/61845.jpg',
+    coverUrl: 'https://choyongjoon.github.io/march-of-requests/static/61845.jpg',
     tracks: [
       {
         title: '소나기의 첫 번째 물방울'
@@ -238,7 +238,7 @@ const albums = [
     id: 5,
     title: '당신은 울기 위해 태어난 사람',
     date: new Date('2006-07-07'),
-    coverUrl: '/static/40475.jpg',
+    coverUrl: 'https://choyongjoon.github.io/march-of-requests/static/40475.jpg',
     tracks: [
       {
         title: '봄의 첫 날'
@@ -285,7 +285,7 @@ const albums = [
     id: 4,
     title: '빛방울보들',
     date: new Date('2005-06-30'),
-    coverUrl: '/static/33235.jpg',
+    coverUrl: 'https://choyongjoon.github.io/march-of-requests/static/33235.jpg',
     tracks: [
       {
         title: '빛방울보 (edit ver.)'
@@ -311,7 +311,7 @@ const albums = [
     id: 3,
     title: '영원의 단면',
     date: new Date('2005-04-04'),
-    coverUrl: '/static/32022.jpg',
+    coverUrl: 'https://choyongjoon.github.io/march-of-requests/static/32022.jpg',
     tracks: [
       {
         title: '안아줘'
@@ -358,7 +358,7 @@ const albums = [
     id: 2,
     title: 'Miss Chocolate',
     date: new Date('2004-09-16'),
-    coverUrl: '/static/28397.jpg',
+    coverUrl: 'https://choyongjoon.github.io/march-of-requests/static/28397.jpg',
     tracks: [
       {
         title: 'Miss Chocolate'
@@ -378,7 +378,7 @@ const albums = [
     id: 1,
     title: '가벼운 숨결',
     date: new Date('2001-01-07'),
-    coverUrl: '/static/15417.jpg',
+    coverUrl: 'https://choyongjoon.github.io/march-of-requests/static/15417.jpg',
     tracks: [
       {
         title: '오르골'
