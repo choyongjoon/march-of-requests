@@ -125,7 +125,11 @@ export default class App extends Component {
             {albums.map(album => (
               <li className='album' key={album.id}>
                 <div className='album-header'>
-                  <img className='album-cover' src={album.coverUrl} />
+                  <img
+                    className='album-cover'
+                    src={album.coverUrl}
+                    alt={`${album.title} 앨범의 커버 이미지`}
+                  />
                   <h3 className='album-title'>{album.title}</h3>
                   <div className='album-date'>{album.date.toLocaleDateString()}</div>
                 </div>
