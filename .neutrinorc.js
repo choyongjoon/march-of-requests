@@ -22,7 +22,7 @@ module.exports = {
               property: 'og:image',
               content: '/static/screenshot_1200x630.png'
             }
-          ]
+          ],
           title: '신청의 3월 도우미'
         }
       }
