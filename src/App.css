@@ -48,8 +48,8 @@ input[type=number] {
 }
 
 .request-container, .track-container {
-  margin-bottom: 20px;
-  padding: 0 10px 0 10px;
+  margin-top: 20px;
+  padding: 1px 10px;
   vertical-align: top;
 }
 
@@ -134,7 +134,8 @@ input[type=number] {
 
   .request-container, .track-container {
     display: inline-block;
-    margin: 0 10px 0 10px;
+    margin-right: 10px;
+    margin-left: 10px;
     width: 354px;
   }
 
