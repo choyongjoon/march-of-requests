@@ -6,7 +6,8 @@ module.exports = {
       {
         html: {
           googleAnalytics: {
-            trackingId: 'UA-112518044-1'
+            trackingId: 'UA-112518044-1',
+            pageViewOnLoad: true
           },
           lang: 'ko',
           links: [
