@@ -2,6 +2,7 @@ import { Component } from 'react'
 
 import albums from './albums'
 
+import '../node_modules/normalize.css/normalize.css'
 import './App.css'
 
 const maxRequests = 10
@@ -95,18 +96,22 @@ export default class App extends Component {
           <ul className='request-list'>
             {requests.map((request, i) => {
               const track = getTrack(request)
+              const id = `request-checkbox-${request.albumId}-${request.trackId}`
               return (
                 <li
                   className='request'
                   key={`${request.albumId}-${request.trackId}`}
                 >
                   <input
+                    id={id}
                     className='request-checkbox'
                     type='checkbox'
                     checked
                     onChange={this.onToggleRequest(i)}
                   />
-                  <label className='track-title'>{track.title}</label>
+                  <label className='track-title' for={id}>
+                    {track.title}
+                  </label>
                   <input
                     className='request-score-input'
                     type='number'
@@ -136,16 +141,20 @@ export default class App extends Component {
                 <ul className='track-list'>
                   {album.tracks.map((track, i) => {
                     const checked = getChecked(album.id, i + 1, requests)
+                    const id = `track-checkbox-${album.id}-${i + 1}`
                     return (
                       <li className='track' key={track.title}>
                         <input
+                          id={id}
                           className='track-checkbox'
                           type='checkbox'
                           checked={checked}
                           onChange={this.onToggleTrack(album.id, i + 1)}
                           disabled={!checked && isRequestsFull}
                         />
-                        <label className='track-title'>{track.title}</label>
+                        <label className='track-title' for={id}>
+                          {track.title}
+                        </label>
                       </li>
                     )
                   })}
