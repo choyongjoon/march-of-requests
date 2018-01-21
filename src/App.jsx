@@ -121,7 +121,7 @@ export default class App extends Component {
                     checked
                     onChange={this.onToggleRequest(i)}
                   />
-                  <label className='track-title' for={id}>
+                  <label className='track-title' htmlFor={id}>
                     {track.title}
                   </label>
                   <input
@@ -164,7 +164,7 @@ export default class App extends Component {
                           onChange={this.onToggleTrack(album.id, i + 1)}
                           disabled={!checked && isRequestsFull}
                         />
-                        <label className='track-title' for={id}>
+                        <label className='track-title' htmlFor={id}>
                           {track.title}
                         </label>
                       </li>
