@@ -14,6 +14,18 @@ export default class App extends Component {
     sumScore: 0
   }
 
+  componentDidMount () {
+    const stateString = localStorage.getItem('state')
+    const state = JSON.parse(stateString)
+    if (state) this.setState(state)
+  }
+
+  setState (state) {
+    super.setState(state, () => {
+      localStorage.setItem('state', JSON.stringify(this.state))
+    })
+  }
+
   onToggleRequest = i => () => {
     const { requests, sumScore } = this.state
     const newRequests = [...requests]
