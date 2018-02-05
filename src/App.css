@@ -38,7 +38,6 @@ input[type=number] {
 
 .App {
   margin: auto;
-  padding: 10px;
   width: 100%;
 }
 
@@ -47,100 +46,93 @@ input[type=number] {
   text-align: center;
 }
 
-.request-container, .track-container {
-  margin-top: 20px;
-  padding: 1px 10px;
+.content {
+  margin: auto;
+  width: 100%;
+}
+
+@media (min-width: 360px) {
+  .content {
+    width: 360px;
+  }
+}
+
+@media (min-width: 720px) {
+  .content {
+    width: 720px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .content {
+    width: 1080px;
+  }
+}
+
+
+.orders {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  width: calc(100% - 40px);
   vertical-align: top;
 }
 
-.reamining-score {
-  margin-bottom: 20px;
+@media (min-width: 360px) {
+  .orders {
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 320px;
+  }
 }
 
-.request, .track {
+.orders_title {
+  text-align: center;
+}
+
+.orders_title > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.order {
   display: flex;
-  height: 30px;
-  line-height: 1.8;
-
-  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+  line-height: 28px;
 }
 
-.track-title {
+.order--semi-bold {
+  border-bottom: 1px solid #bbbbbb;
+}
+
+.order--bold {
+  border-bottom: 1px solid #777777;
+}
+
+.order_number {
+  margin-right: 20px;
+  margin-left: 0px;
+  width: 20px;
+  text-align: right;
+}
+
+.order_title {
   overflow: hidden;
+  margin-right: 20px;
   text-overflow: ellipsis;
   white-space: nowrap;
 
   flex: 1;
 }
 
-.request-score-input {
-  margin-bottom: 6px;
-  padding: 4px 4px 0 4px;
-  width: 35px;
-  border: 0;
-  border-bottom: 1px solid #ccc;
-  border-radius: 0;
-  text-align: right;
-  font-weight: normal;
-  font-size: 1em;
-  font-family: inherit;
+.order_updown {
+  margin-right: 10px;
+  width: 32px;
+  text-align: center;
+  font-size: 0.8em;
 }
 
-.request-score-input:focus {
-  border-bottom: 1px solid #000;
-}
-
-.album {
-  margin-bottom: 30px;
-}
-
-.album-header {
-  margin-bottom: 20px;
-}
-
-.album-cover {
-  float: right;
-  margin-top: 3px;
-  width: 82px;
-  height: 82px;
-  border: 1px solid #eee;
-}
-
-.album-title {
-  margin-bottom: 10px;
-}
-
-.album-date {
-  padding-left: 1px;
-  font-size: 0.9em;
-}
-
-.request-checkbox, .track-checkbox {
-  margin-right: 7px;
-  margin-left: 1px;
-}
-
-@media (min-width: 576px) {
-  .App {
-    width: 576px;
-  }
-}
-
-
-@media (min-width: 768px) {
-  .App {
-    width: 768px;
-  }
-
-  .request-container, .track-container {
-    display: inline-block;
-    margin-right: 10px;
-    margin-left: 10px;
-    width: 354px;
-  }
-
-  .request-container {
-    position: sticky;
-    top: 20px;
-  }
+.order_image {
+  width: 28px;
 }

@@ -17,14 +17,14 @@ module.exports = {
           meta: [
             {
               name: 'description',
-              content: '줄리아 하트의 노래를 고르고 점수 나누는 것을 도와줍니다.'
+              content: '줄리아 하트의 신청의 3월 투표 기록입니다. (비공식)'
             },
             {
               property: 'og:image',
               content: 'https://choyongjoon.github.io/march-of-requests/static/screenshot_1200x630.png'
             }
           ],
-          title: '신청의 3월 도우미'
+          title: '신청의 3월'
         }
       }
     ],
