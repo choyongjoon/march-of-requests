@@ -94,7 +94,7 @@ class Orders extends Component {
                     {updown}
                   </div>
                 )}
-                <img src={coverUrl} className='order_image' />
+                {coverUrl && <img src={coverUrl} className='order_image' />}
               </li>
             )
           })}
