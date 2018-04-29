@@ -128,7 +128,8 @@ input[type=number] {
 
 .order_updown {
   margin-right: 10px;
-  width: 32px;
+  padding: 0 2px;
+  width: 28px;
   text-align: center;
   font-size: 0.8em;
 }

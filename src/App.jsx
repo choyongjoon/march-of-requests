@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import { Component, Fragment } from 'react'
 
 import albums from './albums'
 import tracks from './tracks'
@@ -66,9 +66,29 @@ class Orders extends Component {
               const prevIndex = prevOrders.findIndex(order => order.title === title)
               if (prevIndex >= 0) {
                 const offset = index - prevIndex
-                if (offset > 0) updown = `▽ ${offset}`
-                else if (offset < 0) updown = `▴ ${-offset}`
-                else updown = '-'
+                if (offset > 0) {
+                  updown = (
+                    <Fragment>
+                      <span style={{ float: 'left', fontSize: '0.6em' }}>
+                        ▽
+                      </span>
+                      <span style={{ float: 'right' }}>
+                        {offset}
+                      </span>
+                    </Fragment>
+                  )
+                } else if (offset < 0) {
+                  updown = (
+                    <Fragment>
+                      <span style={{ float: 'left', fontSize: '0.6em' }}>
+                        ▴
+                      </span>
+                      <span style={{ float: 'right' }}>
+                        {-offset}
+                      </span>
+                    </Fragment>
+                  )
+                } else updown = '-'
               } else {
                 updown = 'new'
               }
